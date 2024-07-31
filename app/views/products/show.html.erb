@@ -1,0 +1,16 @@
+<%= render 'layouts/header' %>
+
+<div class="container">
+  <div class="product">
+    <%= image_tag @product.image, class: "product-img" %>
+    <div class="product__content-header text-center">
+      <div class="product__name">
+        <%= @product.name %>
+      </div>
+      <div class="product__price">
+        ¥<%= number_to_delimited(@product.price) %>
+      </div>
+    </div>
+    <%= @product.description %>
+  </div>
+</div>
