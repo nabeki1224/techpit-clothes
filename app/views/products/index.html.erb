@@ -1,0 +1,28 @@
+<%= render 'layouts/header' %>
+
+<div class="jumbotron top-img">
+  <p class="text-center text-white top-img-text">Techpit Clothes</p>
+</div>
+
+<div class="container">
+  <div class="top__title text-center">
+    All Products
+  </div>
+  <div class="row">
+    <% @products.each do |product| %>
+      <%= link_to "http://example.com", class: "col-lg-4 col-md-6" do %>
+        <div class="card">
+          <%= image_tag product.image, class: "card-img" %>
+          <div class="card-body">
+            <p class="card-title">
+              <%= product.name %>
+            </p>
+            <p class="card-text">
+              ¥<%= number_to_delimited(product.price) %>
+            </p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
